@@ -4,8 +4,7 @@ A small booking website for local service providers (plumbers, electricians, cle
 
 Built as part of my frontend internship at ProCode Academy.
 
-**Live demo:** _add your deployed link here_
-**Video walkthrough:** _add your video link here_
+**Live demo:[(https://fixit-booking.netlify.app/)]
 
 ---
 
