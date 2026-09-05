@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    />
+
+    <title>FixIt Booking</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="logo" href="#home"> Fix<span>It</span> Booking </a>
+
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+          <li><a href="#requests">My Requests</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="tel:+96101001001">
+            <i class="fa-solid fa-phone"></i>
+            01-001-001
+          </a>
+
+          <a href="#quote" class="btn btn-primary"> Book Now </a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="badge">
+              <span class="dot"></span>
+              24/7 Emergency Service Available
+            </span>
+
+            <h1>
+              Get an <em>instant quote</em>
+              for any home service in under a minute
+            </h1>
+
+            <p class="lead">
+              Plumbing, electrical, cleaning, moving, or maintenance. Pick a
+              service, describe the problem, and get a clear price estimate
+              before you book.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#quote" class="btn btn-primary"> Get a Quote → </a>
+
+              <a href="#services" class="btn btn-ghost"> Browse Services </a>
+            </div>
+
+            <div class="trust-row">
+              <div class="trust-item">
+                <span class="ic">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                Licensed technicians
+              </div>
+
+              <div class="trust-item">
+                <span class="ic">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </span>
+                Service guarantee
+              </div>
+
+              <div class="trust-item">
+                <span class="ic">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                4.9 out of 5 rating
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="mini-card">
+              <span class="label">Service</span>
+              <span class="val"> Plumbing — Leak Repair </span>
+            </div>
+
+            <div class="mini-card">
+              <span class="label">Priority</span>
+              <span class="val">Standard</span>
+            </div>
+
+            <div class="mini-card">
+              <span class="label">Appointment</span>
+              <span class="val"> Tomorrow, 10:00 AM </span>
+            </div>
+
+            <div class="mini-card total">
+              <span class="label">Estimated Price</span>
+              <span class="val">$45</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">01 — Services</div>
+
+            <h2>Choose the service you need</h2>
+
+            <p>
+              Each card sets the base price directly in the quote form below.
+            </p>
+          </div>
+
+          <div class="services-grid" id="services-grid"></div>
+        </div>
+      </section>
+
+      <section id="quote" style="background: #eef3fa">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">02 — Request a Quote</div>
+
+            <h2>Fill in the details and get an instant estimate</h2>
+
+            <p>
+              The estimated price updates automatically as you change any
+              option.
+            </p>
+          </div>
+
+          <div class="quote-wrap">
+            <form class="card" id="quote-form">
+              <div class="form-grid">
+                <div class="divider-label">Service Details</div>
+
+                <div class="field">
+                  <label>
+                    Service Type
+                    <span class="req">*</span>
+                  </label>
+
+                  <select id="service-select"></select>
+                </div>
+
+                <div class="field">
+                  <label>
+                    Priority Level
+                    <span class="req">*</span>
+                  </label>
+
+                  <select id="priority-select">
+                    <option value="standard">Standard</option>
+
+                    <option value="urgent">Urgent (same day)</option>
+
+                    <option value="emergency">Emergency</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label> Rooms / Items </label>
+
+                  <input id="rooms-input" type="number" min="1" value="1" />
+                </div>
+
+                <div class="field">
+                  <label> Approx. Distance (km) </label>
+
+                  <input id="distance-input" type="number" min="0" value="5" />
+                </div>
+
+                <div class="field full">
+                  <label> Describe the problem </label>
+
+                  <textarea
+                    id="description-input"
+                    placeholder="e.g. Water leak under the sink..."
+                  ></textarea>
+                </div>
+
+                <div class="divider-label">Contact & Appointment</div>
+
+                <div class="field">
+                  <label>
+                    Full Name
+                    <span class="req">*</span>
+                  </label>
+
+                  <input
+                    id="name-input"
+                    type="text"
+                    name="customer"
+                    placeholder="Your name"
+                  />
+
+                  <span class="error"> Name is required </span>
+                </div>
+
+                <div class="field">
+                  <label>
+                    Phone Number
+                    <span class="req">*</span>
+                  </label>
+
+                  <input
+                    id="phone-input"
+                    type="tel"
+                    name="phone"
+                    placeholder="03 123 456"
+                  />
+
+                  <span class="error"> Phone number is required </span>
+                </div>
+
+                <div class="field full">
+                  <label>
+                    Area / Address
+                    <span class="req">*</span>
+                  </label>
+
+                  <input
+                    id="address-input"
+                    type="text"
+                    name="area"
+                    placeholder="e.g. Hamra, Beirut"
+                  />
+
+                  <span class="error"> Address is required </span>
+                </div>
+
+                <div class="field">
+                  <label>
+                    Date
+                    <span class="req">*</span>
+                  </label>
+
+                  <input id="date-input" type="date" />
+
+                  <span class="error"> Date is required </span>
+                </div>
+
+                <div class="field">
+                  <label>
+                    Preferred Time
+                    <span class="req">*</span>
+                  </label>
+
+                  <select id="time-select">
+                    <option value="9:00 AM – 11:00 AM">
+                      9:00 AM – 11:00 AM
+                    </option>
+
+                    <option value="11:00 AM – 1:00 PM">
+                      11:00 AM – 1:00 PM
+                    </option>
+
+                    <option value="2:00 PM – 4:00 PM">2:00 PM – 4:00 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 22px"
+              >
+                Confirm Request
+              </button>
+            </form>
+
+            <div class="card estimate-card">
+              <h3>Price Estimate Summary</h3>
+
+              <p class="sub">Calculated automatically from your choices</p>
+
+              <div class="estimate-row">
+                <span>Base price</span>
+                <span id="base-price">$25</span>
+              </div>
+
+              <div class="estimate-row">
+                <span>Priority fee</span>
+                <span id="priority-fee">$0</span>
+              </div>
+
+              <div class="estimate-row">
+                <span>Distance fee</span>
+                <span id="distance-fee">$0</span>
+              </div>
+
+              <div class="estimate-row">
+                <span>Number of Room</span>
+                <span id="number-of-room">1</span>
+              </div>
+
+              <div class="estimate-row">
+                <span>Room fee</span>
+                <span id="room-fee">$0</span>
+              </div>
+
+              <div class="estimate-total">
+                <span class="t-label"> Estimated Total </span>
+
+                <span class="t-value" id="total-price"> $25 </span>
+              </div>
+
+              <p class="estimate-note">
+                Final price is confirmed after the technician's visit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">03 — Confirmation</div>
+
+            <h2>Booking confirmation screen</h2>
+          </div>
+
+          <div class="card confirm-card">
+            <div class="confirm-icon">✓</div>
+
+            <h3>Your request was received</h3>
+
+            <p>
+              Our team will contact you an hour before the appointment to
+              confirm the details.
+            </p>
+
+            <div class="confirm-summary">
+              <div>
+                <span>Request ID</span>
+                <b id="confirmation-id">—</b>
+              </div>
+
+              <div>
+                <span>Service</span>
+                <b id="confirmation-service">—</b>
+              </div>
+
+              <div>
+                <span>Appointment</span>
+                <b id="confirmation-date">—</b>
+              </div>
+
+              <div>
+                <span>Estimated price</span>
+                <b id="confirmation-price">—</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="requests" style="background: #eef3fa">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">04 — Saved Requests</div>
+
+            <h2>My Requests</h2>
+
+            <p>
+              Requests are saved locally on your device and persist after a page
+              refresh.
+            </p>
+          </div>
+
+          <div class="requests-list" id="requests-list">
+            <div class="req-row head">
+              <span>Name</span>
+              <span>Service</span>
+              <span>Appointment</span>
+              <span>Price</span>
+              <span>Status</span>
+              <span>Actions</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">05 — FAQ</div>
+
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <div class="card">
+            <h3>How is the price calculated?</h3>
+
+            <p>
+              The estimate starts with the service base price, then adds
+              priority, distance, and room fees.
+            </p>
+
+            <br />
+
+            <h3>Are my requests saved?</h3>
+
+            <p>
+              Yes. Requests are saved in your browser's localStorage and remain
+              after refreshing the page.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="brand">Fix<span>It</span> Booking</div>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#quote">Contact</a>
+        </div>
+
+        <span style="font-size: 13px">
+          © 2026 FixIt Booking — Training Project
+        </span>
+      </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
