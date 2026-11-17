@@ -2,7 +2,7 @@
 
 A small booking website for local service providers (plumbers, electricians, cleaners, movers, and maintenance techs). Customers pick a service, get a live demo price estimate, and submit a request. This is a frontend-only educational prototype: it has no backend or shared database, and it stores requests in the browser's localStorage.
 
-Built while studying frontend development at Pr0Code. This learning project is not presented as a completed employment internship.
+Developed as a frontend practice project while undertaking Full-Stack Development training at Pr0Code. This repository documents the project, not a completed employment internship.
 
 **Live demo:** [FixIt Booking](https://fixit-booking.netlify.app/) (check availability before sharing)
 
