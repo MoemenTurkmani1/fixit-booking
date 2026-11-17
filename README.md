@@ -1,17 +1,17 @@
 # FixIt Booking
 
-A small booking website for local service providers (plumbers, electricians, cleaners, movers, and maintenance techs). Customers pick a service, get a live price estimate, and submit a request no backend, no database, just HTML/CSS/JS and the browser's localStorage.
+A small booking website for local service providers (plumbers, electricians, cleaners, movers, and maintenance techs). Customers pick a service, get a live demo price estimate, and submit a request. This is a frontend-only educational prototype: it has no backend or shared database, and it stores requests in the browser's localStorage.
 
-Built as part of my frontend internship at ProCode Academy.
+Developed as a frontend practice project while undertaking Full-Stack Development training at Pr0Code. This repository documents the project, not a completed employment internship.
 
-**Live demo:[(https://fixit-booking.netlify.app/)]
+**Live demo:** [FixIt Booking](https://fixit-booking.netlify.app/) (check availability before sharing)
 
 ---
 
 ## The problem
 
 Small service businesses usually run leads through phone calls and WhatsApp messages, which means:
-- Customers don't know roughly what a job will cost before they commit to calling.
+- Customers often don't know roughly what a job will cost before they commit to calling.
 - Owners waste time going back and forth just to collect basic details (what, where, when).
 
 FixIt Booking solves the "what will this cost me" question upfront, and turns a visitor into a structured request the business can act on without needing them to call first.
@@ -63,7 +63,7 @@ There's no backend, so everything lives in the browser's `localStorage` under on
 
 ## Tech stack
 
-Plain HTML, CSS, and vanilla JavaScript. No frameworks, no build step open `index.html` and it works.
+Plain HTML, CSS, and vanilla JavaScript. No frameworks, no build step: open `index.html` in a browser.
 
 ```
 /
@@ -71,7 +71,7 @@ Plain HTML, CSS, and vanilla JavaScript. No frameworks, no build step open `inde
 ├── /css
 │   └── styles.css
 ├── /js
-│   └── app.js
+│   └── script.js
 └── /assets
     └── (icons/images if any)
 ```
